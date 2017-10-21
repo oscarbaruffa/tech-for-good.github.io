@@ -44,7 +44,9 @@
           <details>
             <summary>🔨 Contribute to active projects</summary>
             <div>
-              Info pending...
+              <ul>
+                <li><a href="https://www.forgood.co.za/home">forgood connects people to Causes</a></li>
+              </ul>
             </div>
         </details>
       </li>
@@ -52,7 +54,9 @@
           <details>
             <summary>👥 Find contributors for existing projects</summary>
           <div>
-            Info pending...
+              <ul>
+                <li><a href="https://www.forgood.co.za/home">forgood connects people to Causes</a></li>
+              </ul>
           </div>
         </details>
       </li>
@@ -64,6 +68,47 @@
           </div>
         </details>
       </li>
+      <li>
+        <details>
+          <summary>📚 More resources</summary>
+          <div>
+            <ul>
+              <li><a href="http://ggln.org.za/about-us-ggln/about-us-ggln2">Good Governance Learning Network</a></li>
+              <li><a href="https://www.linuxfoundation.org/tools-managing-open-source-programs/">Tools for Managing Open Source Programs</a></li>
+              <li><a href="https://innovatingjustice.com/en/">Innovating Justice</a></li>
+              <li><a href="https://openknowledge.worldbank.org/handle/10986/27947">Civic Tech in the Global South : Assessing Technology for the Public Good</a></li>
+              <li><a href="https://medium.com/@zeldman/why-dont-nonprofit-sites-convert-cc0266690fbc">Why don't non-profit sites convert?</a></li>
+            </ul>
+          </div>
+        </details>
+      </li>
     </ul>
+    <script>
+      /**
+      * Function that tracks a click on an outbound link in Analytics.
+      * This function takes a valid URL string as an argument, and uses that URL string
+      * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+      * using 'navigator.sendBeacon' in browser that support it.
+      */
+      var trackOutboundLink = function(url) {
+        console.log(url);
+         ga('send', 'event', 'outbound', 'click', url, {
+           'transport': 'beacon',
+           'hitCallback': function(){document.location = url;}
+         });
+      };
+      var trackAnchor = function(e) {
+        return trackOutboutLink(e.srcElement.href);
+      };
+      var elements = document.getElementsByTagName('a');
+      for (var i = 0, len = elements.length; i < len; i++) {
+        var el = elements[i];
+        if (el.addEventListener) {
+          el.addEventListener("click", trackAnchor, false);
+        } else {
+            el.attachEvent('onclick', trackAnchor);
+        }
+      }
+    </script>
   </body>
 </html>
