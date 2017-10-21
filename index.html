@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108372355-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108372355-1');
+    </script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="An exploratory, community-driven project for all those interested in using technology for social good within South Africa.">
@@ -34,7 +44,10 @@
           <details>
             <summary>🔨 Contribute to active projects</summary>
             <div>
-              <a href="https://trello.com/b/TAPZltJQ/proposal-where-can-i-jump-in">Find active projects where you can contribute</a>
+              <ul>
+                <li><a href="https://trello.com/b/TAPZltJQ/proposal-where-can-i-jump-in">Find active projects where you can contribute</a></li>
+                <li><a href="https://www.forgood.co.za/home">forgood connects people to Causes</a></li>
+              </ul>
             </div>
         </details>
       </li>
@@ -42,7 +55,9 @@
           <details>
             <summary>👥 Find contributors for existing projects</summary>
           <div>
-            Info pending...
+              <ul>
+                <li><a href="https://www.forgood.co.za/home">forgood connects people to Causes</a></li>
+              </ul>
           </div>
         </details>
       </li>
@@ -54,7 +69,47 @@
           </div>
         </details>
       </li>
+      <li>
+        <details>
+          <summary>📚 More resources</summary>
+          <div>
+            <ul>
+              <li><a href="http://ggln.org.za/about-us-ggln/about-us-ggln2">Good Governance Learning Network</a></li>
+              <li><a href="https://www.linuxfoundation.org/tools-managing-open-source-programs/">Tools for Managing Open Source Programs</a></li>
+              <li><a href="https://innovatingjustice.com/en/">Innovating Justice</a></li>
+              <li><a href="https://openknowledge.worldbank.org/handle/10986/27947">Civic Tech in the Global South : Assessing Technology for the Public Good</a></li>
+              <li><a href="https://medium.com/@zeldman/why-dont-nonprofit-sites-convert-cc0266690fbc">Why don't non-profit sites convert?</a></li>
+            </ul>
+          </div>
+        </details>
+      </li>
     </ul>
-
+    <script>
+      /**
+      * Function that tracks a click on an outbound link in Analytics.
+      * This function takes a valid URL string as an argument, and uses that URL string
+      * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+      * using 'navigator.sendBeacon' in browser that support it.
+      */
+      var trackOutboundLink = function(url) {
+        console.log(url);
+         ga('send', 'event', 'outbound', 'click', url, {
+           'transport': 'beacon',
+           'hitCallback': function(){document.location = url;}
+         });
+      };
+      var trackAnchor = function(e) {
+        return trackOutboutLink(e.srcElement.href);
+      };
+      var elements = document.getElementsByTagName('a');
+      for (var i = 0, len = elements.length; i < len; i++) {
+        var el = elements[i];
+        if (el.addEventListener) {
+          el.addEventListener("click", trackAnchor, false);
+        } else {
+            el.attachEvent('onclick', trackAnchor);
+        }
+      }
+    </script>
   </body>
 </html>
