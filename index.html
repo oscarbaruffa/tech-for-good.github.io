@@ -1,16 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108372355-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-108372355-1');
-    </script>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="An exploratory, community-driven project for all those interested in using technology for social good within South Africa.">
@@ -25,24 +15,28 @@
 
     <h2>What is this?</h2>
 
-    <p><em>Technology for Good</em> is an exploratory, community-driven directory for those working in the South Africa tech-industry interested in using their skills for social good.</p>
+    <p><em>Tech for Good</em> is an exploratory, community-driven directory for those working in the South Africa tech-industry interested in using their skills for social good.</p>
 
-    <p>This means, first and foremost, that we'd love to merge your pull requests to this repository. New resources, fixes for broken links and typo corrections (among other things) are super welcome!</p>
+    <p>Our hope is that this page provides the resources required for anyone, regardless of skill or experience level, to jump in and contribute to real-world projects using technology for good.</p>
 
     <h2>What do you want to do?</h2>
 
     <ul>
       <li>
         <details>
-          <summary>💬 Join the discussion</summary>
-          <div>
-            Info pending...
-          </div>
+          <summary><h3>💬 Join the discussion</h3></summary>
+          <dl>
+            <dt>Join our online discussion on Slack</dt>
+            <dd>We have discussion channels on both the <a href="https://zatech.github.io/site/">ZA Tech</a> and <a href="https://docs.google.com/forms/d/e/1FAIpQLScBPmaH71EuV3HTw-4KSB6x-Xs-6Euf3baSfsMt1wi8n9adkA/viewform">Code for Africa</a> Slack workspaces. These two channels are linked, which means that content is mirrored across both platforms (you can join either of these as a result). If you are not familiar with Slack you can follow our <a href="guides/join-slack.html">step-by-step guide to join the channel</a>. In addition, if you prefer to use IRC (over Slack) you can <a href="guides/use-irc.html">follow our IRC instructions</a></dd>
+
+            <dt>Forthnightly Cape Town Meetup</dt>
+            <dd><em>Tech for Good</em> uses the forthnightly <a href="https://www.meetup.com/OpenUp/">Codebridge Community Evening</a> as our regular meeting space. This is first and foremost an opportunity for people to relax and connect (there is free pizza and beer!). However, we usually take about 30 minutes (for those interested) to do a catch-up on what everyone is working on and where people can get involved. We have a couple of individuals joining in remotely via video/audo chat. If you are interested in joining remotely have a look at our <a href="guides/join-remotely.html">remote meetup instructions</a>.</dd>
         </details>
       </li>
+
       <li>
           <details>
-            <summary>🔨 Contribute to active projects</summary>
+            <summary><h3>🔨 Contribute to active projects</h3></summary>
             <div>
               <ul>
                 <li><a href="https://trello.com/b/TAPZltJQ/proposal-where-can-i-jump-in">Find active projects where you can contribute</a></li>
@@ -53,7 +47,7 @@
       </li>
       <li>
           <details>
-            <summary>👥 Find contributors for existing projects</summary>
+            <summary><h3>👥 Find contributors for existing projects</h3></summary>
           <div>
               <ul>
                 <li><a href="https://www.forgood.co.za/home">forgood connects people to Causes</a></li>
@@ -63,7 +57,7 @@
       </li>
       <li>
         <details>
-          <summary>🚀 Start a new project          </summary>
+          <summary><h3>🚀 Start a new project</h3></summary>
           <div>
             Info pending...
           </div>
@@ -71,7 +65,7 @@
       </li>
       <li>
         <details>
-          <summary>📚 More resources</summary>
+          <summary><h3>📚 More resources</h3></summary>
           <div>
             <ul>
               <li><a href="http://ggln.org.za/about-us-ggln/about-us-ggln2">Good Governance Learning Network</a></li>
@@ -84,32 +78,7 @@
         </details>
       </li>
     </ul>
-    <script>
-      /**
-      * Function that tracks a click on an outbound link in Analytics.
-      * This function takes a valid URL string as an argument, and uses that URL string
-      * as the event label. Setting the transport method to 'beacon' lets the hit be sent
-      * using 'navigator.sendBeacon' in browser that support it.
-      */
-      var trackOutboundLink = function(url) {
-        console.log(url);
-         ga('send', 'event', 'outbound', 'click', url, {
-           'transport': 'beacon',
-           'hitCallback': function(){document.location = url;}
-         });
-      };
-      var trackAnchor = function(e) {
-        return trackOutboutLink(e.srcElement.href);
-      };
-      var elements = document.getElementsByTagName('a');
-      for (var i = 0, len = elements.length; i < len; i++) {
-        var el = elements[i];
-        if (el.addEventListener) {
-          el.addEventListener("click", trackAnchor, false);
-        } else {
-            el.attachEvent('onclick', trackAnchor);
-        }
-      }
-    </script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-108372355-1"></script>
+    <script src="assets/js/google-analytics.js"></script>
   </body>
 </html>

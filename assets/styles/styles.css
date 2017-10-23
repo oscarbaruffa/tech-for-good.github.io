@@ -691,11 +691,15 @@ h6 {
 }
 
 summary {
+  margin: 16px 0;
+  cursor: pointer;
+}
+
+h3 {
   font-size: 20px;
   font-weight: 600;
-  margin: 16px 0;
   font-weight: 600;
   line-height: 1.25;
   font-size: 1.25em;
-  cursor: pointer;
+  display: inline;
 }
