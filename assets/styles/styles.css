@@ -703,3 +703,24 @@ h3 {
   font-size: 1.25em;
   display: inline;
 }
+
+.item-container {
+  padding: 10px 40px 30px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 16px 0;
+  list-style: none;
+}
+
+.ul-override {
+  padding-left: 0;
+}
+
+.li-override {
+  list-style: none;
+}
+
+.padding-bottom {
+  padding-bottom: 40px;
+}
